@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+## Rules for Number pitch accent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Lorsque précédé par 十 (JUU / 10) les nombres standards à l'exception de 3 and 5 gardent leur downstep
+  => donc 11 = ju u i chi wa = LHHHL
+  => donc 13 = ju u sa n wa = HLLLL
+  => donc 15 = ju u go wa = HLLL
 
-## Available Scripts
+- Les nombre 20..30....90 et les nombres 100..200....900 n'ont pas de règles précise, donc il faut les connaitre par coeur.
 
-In the project directory, you can run:
+  - Ces connaissances peuvent être réutilisées pour les compositions de gros nombres
 
-### `npm start`
+- Lorsque précédé par 千 (SEN/mille) ou 万 (MAN / 10000) le nombre résultant est nakadaka avec le drop sur SEN et MAN
+  => donc 2000 = ni se n wa = LHLL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+COMPLEX NUMBER COMPOUNDS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Each element in a complex number compound retains its normal downstep with the exception of trailing accented JUU (10) and accented HYAKU (100)
+- trailing accented X means that X is accented AND preceeded by a number. Donc HYAKU qui ne suit pas la règle "trailing" respecte la règle même s'il n'y a aucun nombre derrière lui
+- Si aucun nombre ne suit HYAKU ou JUU, ils gardent leur downstep
+  => donc 89 : ha chi ju u ky u wa = LHHHHLL
 
-### `npm test`
+Endroits flous :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 110 : Rien après 10 donc hya/ku ju\u wa
 
-### `npm run build`
+- 11000 ichi man sen : vu que man et sen respectent la règle du précédent qui devient heiban avec le drop sur sen ou man (donc que le résultant est nakadaka) lequel prévaut ? => sen puisqu'il est en dernier. DONC : l'algorithme doit parcourir le nombre dans l'ordre de lecture, comme ça, lorsqu'on passe sur SEN, on efface l'accent de MAN
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 11110 ichi man sen hyaku juu : on applique les deux trouvailles au dessus et ça passe à priori
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 2100 : Rien après 100 donc ni/se\n hya/ku\wa
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+DONC en gros pour reformuler :
 
-### `npm run eject`
+- Si une DIZAINE subit un downstep sur le JU\U ou JUU\ ET qu'il est précédé par un nombre (une unité genre 52 ou autre genre 310) ET qu'il est suivi par un nombre : il perd son downstep (donc flat soit en haut soit en bas)
+  - 52 : perd le downstep sur le JUU
+  - 310 : garde le downstep sur le HYAKU et garde le downstep sur le JUU
+  - 250 : perd le downstep sur le HYAKU et garde le downstep sur le JUU
+  - 251 : perd le downstep sur le HYAKU et perd le downstep sur le JUU
+- Si une CENTAINE subit un downstep sur le HYA\KU ou HYAKU\ ET qu'il est suivi par un nombre : il perd son downstep (donc souvent heiban)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+253 = heiban => le juu san ne subit pas le atamadaka puisque il y a go devant

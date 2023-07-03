@@ -1,0 +1,26 @@
+.PitchTester__selectors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+}
+.PitchTester__number-selectors {
+  border: 1px solid #afafaf;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.PitchTester__counter-selectors {
+  border: 1px solid #afafaf;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.btn-choice {
+  margin-right: 0.5rem;
+}
+
+.PitchTester__current-choice {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
