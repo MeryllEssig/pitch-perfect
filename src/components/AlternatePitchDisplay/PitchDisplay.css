@@ -1,0 +1,12 @@
+.pd-wrapper {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 0.6rem;
+}
+
+.pd-label {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.6rem;
+}
