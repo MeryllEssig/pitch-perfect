@@ -29,9 +29,7 @@ function App() {
 
   const onClickButton = () => {
     if (inputRef.current && inputRef.current.value) {
-      console.log(inputRef.current.value);
       const wordPitch = pitchAccentService.computePitchAccent(Number(inputRef.current.value));
-      console.log(wordPitch);
       setWordPitches(wordPitch);
     }
   };
