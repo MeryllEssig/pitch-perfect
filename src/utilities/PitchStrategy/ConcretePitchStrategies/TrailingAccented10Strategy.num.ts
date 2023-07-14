@@ -15,14 +15,12 @@ export class TrailingAccented10Strategy implements PitchStrategy {
     console.log('TrailingAccented10Strategy');
     if (currentWord.wType.includes(WordType.NumberTrailingAccented10OrAccented100)) {
       currentWord.pitch = heibanka(currentWord.pitch);
-      console.log('t', currentWord.kana, currentWord.pitch);
     }
     if (
       prevWord?.wType.includes(WordType.NumberTrailingAccented10OrAccented100) &&
       currentWord.wType.includes(WordType.Number)
     ) {
       currentWord.pitch = keepPitchUpBeforeDownstep(currentWord.pitch);
-      console.log('u', currentWord.kana, currentWord.pitch);
     }
     return currentWord;
   }

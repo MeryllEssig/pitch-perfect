@@ -495,7 +495,7 @@ export const Counters: WordPitch[] = [
   {
     word: 'キロ',
     kana: 'キロ',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Kilograms or kilometers',
     wType: [WordType.ShortWesternCounter],
     behaviors: [
@@ -508,7 +508,7 @@ export const Counters: WordPitch[] = [
   {
     word: 'ドル',
     kana: 'ドル',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Dollar',
     wType: [WordType.ShortWesternCounter],
     behaviors: [],
@@ -516,7 +516,7 @@ export const Counters: WordPitch[] = [
   {
     word: '歳',
     kana: 'さい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Age',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -524,7 +524,7 @@ export const Counters: WordPitch[] = [
   {
     word: '才',
     kana: 'さい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Age',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -532,7 +532,7 @@ export const Counters: WordPitch[] = [
   {
     word: '個',
     kana: 'こ',
-    pitch: '',
+    pitch: 'HL',
     def: 'Pieces or Articles or Military units',
     wType: [WordType.CommonCounter],
     behaviors: [
@@ -545,7 +545,7 @@ export const Counters: WordPitch[] = [
   {
     word: '位',
     kana: 'い',
-    pitch: '',
+    pitch: 'HL',
     def: 'Position or Rank',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -553,7 +553,7 @@ export const Counters: WordPitch[] = [
   {
     word: '部',
     kana: 'ぶ',
-    pitch: '',
+    pitch: 'HL',
     def: 'Part',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -561,7 +561,7 @@ export const Counters: WordPitch[] = [
   {
     word: '時',
     kana: 'じ',
-    pitch: '',
+    pitch: 'HL',
     def: 'Hour',
     wType: [WordType.CommonCounter],
     behaviors: [{ wordConcerned: '7', where: 'before', behavior: 'しち', all: false }],
@@ -569,7 +569,7 @@ export const Counters: WordPitch[] = [
   {
     word: '分',
     kana: 'ふん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Minutes',
     wType: [WordType.CommonCounter],
     behaviors: [
@@ -583,7 +583,7 @@ export const Counters: WordPitch[] = [
   {
     word: '秒',
     kana: 'びょう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Seconds',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -591,7 +591,7 @@ export const Counters: WordPitch[] = [
   {
     word: '桁',
     kana: 'けた',
-    pitch: '',
+    pitch: 'LHH',
     def: 'Figures or Digit place',
     wType: [WordType.CommonCounter],
     behaviors: [
@@ -608,7 +608,7 @@ export const Counters: WordPitch[] = [
   {
     word: '頭',
     kana: 'とう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Large animals',
     wType: [WordType.CommonCounter],
     behaviors: [
@@ -620,7 +620,7 @@ export const Counters: WordPitch[] = [
   {
     word: '名様',
     kana: 'めいさま',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'People (polite)',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -628,7 +628,7 @@ export const Counters: WordPitch[] = [
   {
     word: '名',
     kana: 'めい',
-    pitch: '',
+    pitch: 'LHH',
     def: 'People (polite)',
     wType: [WordType.CommonCounter],
     behaviors: [],
@@ -636,7 +636,7 @@ export const Counters: WordPitch[] = [
   {
     word: '行',
     kana: 'ぎょう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Lines (paper, etc.)',
     wType: [WordType.CommonCounter],
     behaviors: [], //none
@@ -644,7 +644,7 @@ export const Counters: WordPitch[] = [
   {
     word: '点',
     kana: 'てん',
-    pitch: '',
+    pitch: 'LHH',
     def: 'Small Objects or Goods or Article of clothing or Work of art',
     wType: [WordType.CommonCounter],
     behaviors: [
@@ -655,7 +655,7 @@ export const Counters: WordPitch[] = [
   {
     word: '度',
     kana: 'ど',
-    pitch: '',
+    pitch: 'LH',
     def: 'Temperature',
     wType: [WordType.CommonCounter],
     behaviors: [], //none
@@ -663,7 +663,7 @@ export const Counters: WordPitch[] = [
   {
     word: '階',
     kana: 'かい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Floor',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -677,7 +677,7 @@ export const Counters: WordPitch[] = [
   {
     word: '級',
     kana: 'きゅう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Level or Difficulty or Grade',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -690,7 +690,7 @@ export const Counters: WordPitch[] = [
   {
     word: '倍',
     kana: 'ばい',
-    pitch: '',
+    pitch: 'LHH',
     def: 'Multiple or Time',
     wType: [WordType.HeibanCounter],
     behaviors: [],
@@ -698,7 +698,7 @@ export const Counters: WordPitch[] = [
   {
     word: '戦',
     kana: 'せん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Game or Match',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -710,7 +710,7 @@ export const Counters: WordPitch[] = [
   {
     word: '勝',
     kana: 'しょう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Victory or Win',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -721,7 +721,7 @@ export const Counters: WordPitch[] = [
   {
     word: '敗',
     kana: 'はい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Loss or Defeat',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -734,7 +734,7 @@ export const Counters: WordPitch[] = [
   {
     word: '週',
     kana: 'しゅう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Week',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -746,7 +746,7 @@ export const Counters: WordPitch[] = [
   {
     word: '周',
     kana: 'しゅう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Rotation or Lap',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -758,7 +758,7 @@ export const Counters: WordPitch[] = [
   {
     word: '重',
     kana: 'じゅう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Fold',
     wType: [WordType.HeibanCounter],
     behaviors: [],
@@ -766,7 +766,7 @@ export const Counters: WordPitch[] = [
   {
     word: '層',
     kana: 'そう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Tier or Layer',
     wType: [WordType.HeibanCounter],
     behaviors: [
@@ -778,7 +778,7 @@ export const Counters: WordPitch[] = [
   {
     word: '円玉',
     kana: 'えんだま',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'Japanese Money Coins',
     wType: [WordType.HeibanCounter],
     behaviors: [],
@@ -786,7 +786,7 @@ export const Counters: WordPitch[] = [
   {
     word: '人前',
     kana: 'にんまえ',
-    pitch: '',
+    pitch: 'LHHHH',
     def: '(Food) portions',
     wType: [WordType.HeibanCounter],
     behaviors: [{ wordConcerned: '7', where: 'before', behavior: 'しち', all: true }],
@@ -794,7 +794,7 @@ export const Counters: WordPitch[] = [
   {
     word: '回',
     kana: 'かい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Number of times',
     wType: [WordType.FirstMoraHighCounter, WordType.HeibanAdverbialCounter],
     behaviors: [
@@ -807,7 +807,7 @@ export const Counters: WordPitch[] = [
   {
     word: '点',
     kana: 'てん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Points',
     wType: [WordType.FirstMoraHighCounter, WordType.HeibanAdverbialCounter],
     behaviors: [],
@@ -815,7 +815,7 @@ export const Counters: WordPitch[] = [
   {
     word: '年生',
     kana: 'ねんせい',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'Year at school',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -823,7 +823,7 @@ export const Counters: WordPitch[] = [
   {
     word: '号室',
     kana: 'ごうしつ',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'Room number',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -831,7 +831,7 @@ export const Counters: WordPitch[] = [
   {
     word: '円札',
     kana: 'えんさつ',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'Yen bills',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -839,7 +839,7 @@ export const Counters: WordPitch[] = [
   {
     word: '時間',
     kana: 'じかん',
-    pitch: '',
+    pitch: 'LHHH',
     def: 'Length of time in terms of hour',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -847,7 +847,7 @@ export const Counters: WordPitch[] = [
   {
     word: '週間',
     kana: 'しゅうかん',
-    pitch: '',
+    pitch: 'LHHHH',
     def: 'Length of time in terms of weeks',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -855,7 +855,7 @@ export const Counters: WordPitch[] = [
   {
     word: 'ヶ月',
     kana: 'かげつ',
-    pitch: '',
+    pitch: 'HLLL',
     def: 'Length of time in terms of months',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -863,7 +863,7 @@ export const Counters: WordPitch[] = [
   {
     word: 'センチ',
     kana: 'センチ',
-    pitch: '',
+    pitch: 'HLLL',
     def: 'Centimeter',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -871,7 +871,7 @@ export const Counters: WordPitch[] = [
   {
     word: '等',
     kana: 'とう',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Class or Quality',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -879,7 +879,7 @@ export const Counters: WordPitch[] = [
   {
     word: '拍子',
     kana: 'ひょうし',
-    pitch: '',
+    pitch: 'LHHL',
     def: 'Musical beat',
     wType: [WordType.FirstMoraHighCounter],
     behaviors: [],
@@ -887,7 +887,7 @@ export const Counters: WordPitch[] = [
   {
     word: '番',
     kana: 'ばん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Counter for numbers',
     wType: [WordType.IrregBanCounter],
     behaviors: [],
@@ -895,7 +895,7 @@ export const Counters: WordPitch[] = [
   {
     word: '本',
     kana: 'ほん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Counter for numbers',
     wType: [WordType.IrregHaiMaiHonCounter],
     behaviors: [
@@ -909,7 +909,7 @@ export const Counters: WordPitch[] = [
   {
     word: '年',
     kana: 'ねん',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Years',
     wType: [WordType.IrregNenCounter],
     behaviors: [],
@@ -917,7 +917,7 @@ export const Counters: WordPitch[] = [
   {
     word: '杯',
     kana: 'はい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Cups of liquid',
     wType: [WordType.IrregHaiMaiHonCounter],
     behaviors: [],
@@ -925,7 +925,7 @@ export const Counters: WordPitch[] = [
   {
     word: '枚',
     kana: 'まい',
-    pitch: '',
+    pitch: 'HLL',
     def: 'Sheets or thin flat objects',
     wType: [WordType.IrregHaiMaiHonCounter],
     behaviors: [],
@@ -933,7 +933,7 @@ export const Counters: WordPitch[] = [
   {
     word: '冊',
     kana: 'さつ',
-    pitch: '',
+    pitch: 'LHH',
     def: 'Counter for books',
     wType: [WordType.IrregSatsuHikiCounter, WordType.HeibanSatsuHikiAdverbialCounter],
     behaviors: [
@@ -945,7 +945,7 @@ export const Counters: WordPitch[] = [
   {
     word: '匹',
     kana: 'ひき',
-    pitch: '',
+    pitch: 'LHL',
     def: 'Counter for small animals',
     wType: [WordType.IrregSatsuHikiCounter, WordType.HeibanSatsuHikiAdverbialCounter],
     behaviors: [
@@ -976,3 +976,5 @@ export const noMoraChars = [
   'ェ',
   'ォ',
 ];
+
+export const elongations = ['えい', 'おう', 'ああ', 'いい', 'ゅう', 'ょう'];
