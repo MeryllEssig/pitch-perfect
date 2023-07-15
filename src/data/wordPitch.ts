@@ -540,6 +540,7 @@ export const Counters: WordPitch[] = [
       { wordConcerned: '6', where: 'before', behavior: 'ろっ', all: true },
       { wordConcerned: '8', where: 'before', behavior: 'はっ', all: true },
       { wordConcerned: '10', where: 'before', behavior: 'じゅっ', all: true },
+      { wordConcerned: '100', where: 'before', behavior: 'ひゃっ', all: true },
     ],
   },
   {

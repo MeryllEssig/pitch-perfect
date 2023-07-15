@@ -22,9 +22,17 @@ export class PitchStrategyManager {
     nextWord: WordPitch | null,
     nextNextWord: WordPitch | null
   ): WordPitch | NumberPitch {
-    let numPitch = currentWord;
+    let numPitch = structuredClone(currentWord);
     this._pitchStrategies.forEach(pitchStrategy => {
-      if (pitchStrategy.checkIfStrategyApplies(prevPrevWord, prevWord, numPitch, nextWord, nextNextWord)) {
+      if (
+        pitchStrategy.checkIfStrategyApplies(
+          prevPrevWord,
+          prevWord,
+          numPitch,
+          nextWord,
+          nextNextWord
+        )
+      ) {
         numPitch = pitchStrategy.doAction(prevPrevWord, prevWord, numPitch, nextWord, nextNextWord);
       }
     });

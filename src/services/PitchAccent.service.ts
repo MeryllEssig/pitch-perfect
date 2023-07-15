@@ -11,9 +11,11 @@ import { PitchStrategyManager } from '../utilities/PitchStrategy/PitchStategyMan
 import { kanjiArrayToArrayOfNumberPitch, numberToArrayOfKanji } from '../utilities/word';
 
 export class PitchAccentService {
+  // Each phase determines an order of priority for rules to apply. All words will pass phase 1 first, then again with 2, etc..
   private _firstPhasePitchStrategyManager: PitchStrategyManager;
   private _secondPhasePitchStrategyManager: PitchStrategyManager;
   private _thirdPhasePitchStrategyManager: PitchStrategyManager;
+  private _fourthPhasePitchStrategyManager: PitchStrategyManager;
 
   constructor() {
     // Create PitchStrategyManager and add all the pitch strategies
@@ -25,11 +27,13 @@ export class PitchAccentService {
     this._secondPhasePitchStrategyManager = new PitchStrategyManager();
     this._secondPhasePitchStrategyManager.registerPitchStrategy(new HeibanChainStrategy());
     this._secondPhasePitchStrategyManager.registerPitchStrategy(new BehaviorStrategy());
-    this._secondPhasePitchStrategyManager.registerPitchStrategy(new CommonStrategy());
     // Put the counter strategy here (because number っ pre-counter transform does not become Odaka but Nakadaka)
 
     this._thirdPhasePitchStrategyManager = new PitchStrategyManager();
-    this._thirdPhasePitchStrategyManager.registerPitchStrategy(new CutStrategy());
+    this._thirdPhasePitchStrategyManager.registerPitchStrategy(new CommonStrategy());
+
+    this._fourthPhasePitchStrategyManager = new PitchStrategyManager();
+    this._fourthPhasePitchStrategyManager.registerPitchStrategy(new CutStrategy());
   }
 
   getPitchStrategyManager(): PitchStrategyManager {
@@ -46,7 +50,7 @@ export class PitchAccentService {
         numberPitches.push(counterPitch);
       }
     }
-    const newWordPitches: NumberPitch[] = [];
+    const newNumberPitches: (WordPitch | NumberPitch)[] = [];
     // Apply the rules using word data
     for (let i = 0; i < numberPitches.length; i++) {
       const prevPrevWord = numberPitches[i - 2] || null;
@@ -55,28 +59,63 @@ export class PitchAccentService {
       const nextWord = numberPitches[i + 1] || null;
       const nextNextWord = numberPitches[i + 2] || null;
 
-      numberPitches[i] = this._firstPhasePitchStrategyManager.applyPitchStrategy(
+      newNumberPitches.push(
+        this._firstPhasePitchStrategyManager.applyPitchStrategy(
+          prevPrevWord,
+          prevWord,
+          structuredClone(numWord),
+          nextWord,
+          nextNextWord
+        ) as NumberPitch
+      );
+    }
+
+    for (let i = 0; i < newNumberPitches.length; i++) {
+      const prevPrevWord = newNumberPitches[i - 2] || null;
+      const prevWord = newNumberPitches[i - 1] || null;
+      const numWord = newNumberPitches[i];
+      const nextWord = newNumberPitches[i + 1] || null;
+      const nextNextWord = newNumberPitches[i + 2] || null;
+
+      newNumberPitches[i] = this._secondPhasePitchStrategyManager.applyPitchStrategy(
         prevPrevWord,
         prevWord,
-        numWord,
-        nextWord,
-        nextNextWord
-      ) as NumberPitch;
-      numberPitches[i] = this._secondPhasePitchStrategyManager.applyPitchStrategy(
-        prevPrevWord,
-        prevWord,
-        numberPitches[i],
-        nextWord,
-        nextNextWord
-      ) as NumberPitch;
-      numberPitches[i] = this._thirdPhasePitchStrategyManager.applyPitchStrategy(
-        prevPrevWord,
-        prevWord,
-        numberPitches[i],
+        structuredClone(numWord),
         nextWord,
         nextNextWord
       ) as NumberPitch;
     }
-    return numberPitches;
+    for (let i = 0; i < newNumberPitches.length; i++) {
+      const prevPrevWord = newNumberPitches[i - 2] || null;
+      const prevWord = newNumberPitches[i - 1] || null;
+      const numWord = newNumberPitches[i];
+      const nextWord = newNumberPitches[i + 1] || null;
+      const nextNextWord = newNumberPitches[i + 2] || null;
+
+      newNumberPitches[i] = this._thirdPhasePitchStrategyManager.applyPitchStrategy(
+        prevPrevWord,
+        prevWord,
+        structuredClone(numWord),
+        nextWord,
+        nextNextWord
+      ) as NumberPitch;
+    }
+    for (let i = 0; i < newNumberPitches.length; i++) {
+      const prevPrevWord = newNumberPitches[i - 2] || null;
+      const prevWord = newNumberPitches[i - 1] || null;
+      const numWord = newNumberPitches[i];
+      const nextWord = newNumberPitches[i + 1] || null;
+      const nextNextWord = newNumberPitches[i + 2] || null;
+
+      newNumberPitches[i] = this._fourthPhasePitchStrategyManager.applyPitchStrategy(
+        prevPrevWord,
+        prevWord,
+        structuredClone(numWord),
+        nextWord,
+        nextNextWord
+      ) as NumberPitch;
+    }
+
+    return newNumberPitches;
   }
 }

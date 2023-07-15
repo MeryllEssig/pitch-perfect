@@ -76,13 +76,16 @@ export function keepPitchUpAtStartUntilDrop(pitchPattern: string): string {
   return pitchPattern;
 }
 
-export function nakadakakaLast(pitchPattern: string) {
-  return heibanka(pitchPattern)
-    .split('')
-    .map((pitchVal, index) => {
-      return pitchPattern.length - 1 === index || pitchPattern.length - 2 ? 'L' : pitchVal;
-    })
-    .join('');
+export function nakadakakaOrAtamadakaka(pitchPattern: string) {
+  const moraCount = pitchPattern.length - 1;
+  return moraCount > 2
+    ? heibanka(pitchPattern)
+        .split('')
+        .map((pitchVal, index) => {
+          return pitchPattern.length - 1 === index || pitchPattern.length - 2 ? 'L' : pitchVal;
+        })
+        .join('')
+    : atamadakaka(pitchPattern);
 }
 
 export function kanaWordToArray(kana: string): string[] {
